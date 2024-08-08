@@ -1,12 +1,12 @@
-
 body {
-    background-image: url('https://musictop-bucket.s3.ap-southeast-2.amazonaws.com/media/black_down.jpg');
-    background-size: 100% 800%; /* 拉伸背景图像以适应整个页面 */
-    background-position: center; /* 居中对齐 */
-    background-repeat: no-repeat; /* 不重复背景 */
-    margin: 0; /* 确保背景从页面的顶部开始 */
-    min-height: 300vh; /* 页面高度 */
+    background-image: url('https://musictop-bucket.s3.ap-southeast-2.amazonaws.com/media/black_down.jpg') !important;
+    background-size: 100% 1000% !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    margin: 0 !important;
+    min-height: 400vh !important;
 }
+
 
 @media (max-width: 576px) {
     #first-item {
