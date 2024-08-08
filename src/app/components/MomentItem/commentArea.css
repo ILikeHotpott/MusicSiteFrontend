@@ -1,0 +1,10 @@
+.comment-area {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.comment-area-visible {
+    max-height: 500px; /* 根据需要调整最大高度 */
+    opacity: 1;
+}

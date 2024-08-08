@@ -1,0 +1,332 @@
+
+body {
+    background-image: url('https://musictop-bucket.s3.ap-southeast-2.amazonaws.com/media/black_down.jpg');
+    background-size: 100% 800%; /* 拉伸背景图像以适应整个页面 */
+    background-position: center; /* 居中对齐 */
+    background-repeat: no-repeat; /* 不重复背景 */
+    margin: 0; /* 确保背景从页面的顶部开始 */
+    min-height: 300vh; /* 页面高度 */
+}
+
+@media (max-width: 576px) {
+    #first-item {
+        margin-left: 600px;
+    }
+
+    h1 {
+        color: #D18AA3 !important;
+    }
+
+    .logo-container {
+        margin-top: 30px;
+        width: 100%;
+    }
+
+    .logo {
+        width: 100% !important;
+    }
+}
+
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    font-family: "Briem Hand", cursive;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 75px;
+    color: black;
+}
+
+
+.first-chart-title {
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.first-chart-line {
+    height: 14px;
+    width: 27%;
+    background-color: #007bff;
+    display: inline-block;
+}
+
+.first-chart-word {
+    margin-left: -35px;
+    margin-right: -35px;
+    margin-bottom: 10px;
+    font-size: 40px;
+    font-weight: 500;
+    color: #007bff;
+    font-family: "Briem Hand", cursive;
+}
+
+.first-chart-body {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: auto;
+}
+
+.first-chart-item {
+    margin: 0 20px 20px;
+    height: 230px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    min-width: 300px;
+}
+
+.first-chart-shadow {
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.first-chart-foot {
+    background-color: black;
+    height: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Briem Hand", cursive;
+    font-size: 25px;
+    color: white;
+    padding-bottom: 5px;
+}
+
+.first-chart-foot a {
+    text-decoration: none;
+    color: white;
+}
+
+.first-chart-foot:hover {
+    background-color: #f0f0f0;
+    color: black;
+}
+
+.first-chart-pic {
+    margin-top: 20px;
+    height: 100px;
+    width: 100px;
+    margin-left: -10px;
+}
+
+.first-chart-rank {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    margin-top: 5px;
+}
+
+.first-chart-number {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.first-chart-song-name {
+    display: block;
+    margin-top: 45%;
+    left: 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.first-chart-artist-name {
+    display: block;
+    left: 0;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.first-chart-down-half {
+    height: 40%;
+    width: 100%;
+    background-color: lightgrey;
+    bottom: 0;
+    position: absolute;
+    left: 0;
+    color: #002FA7;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.second-chart {
+    width: 40%;
+    background-color: white;
+    margin-top: 50px;
+    height: 50rem;
+    position: relative;
+}
+
+.second-chart-title {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #007bff;
+    color: white;
+    height: 20%;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.second-chart-item {
+    height: 30%;
+    overflow: hidden;
+}
+
+
+.second-chart-rank {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.second-chart-number {
+    display: inline;
+    font-size: 30px;
+    font-weight: 700;
+    color: black;
+}
+
+.second-chart-rank img {
+    height: 40px;
+    margin-left: 10px;
+}
+
+.second-chart-song-info {
+    text-align: left;
+    margin-left: -20px;
+    margin-top: -10px;
+}
+
+.second-chart-song-name {
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.second-chart-artist-name {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.second-chart-pic {
+    width: 134px;
+    display: inline-block;
+}
+
+.second-chart-pic img {
+    width: 100%;
+    height: 100%;
+}
+
+.logo {
+    width: 80%;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-container {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 50px;
+    position: relative;
+    height: 270px; /* 增加高度以确保图片显示 */
+}
+
+/* 图片滚动区域的样式 */
+.gallery-content {
+    display: flex;
+    white-space: nowrap;
+    position: absolute;
+    left: 0; /* 初始化位置从0开始 */
+}
+
+/* 图片的样式 */
+.gallery-content img {
+    margin: 0 10px;
+    height: 250px; /* 固定高度 */
+    width: 250px; /* 固定宽度 */
+    border: 1px solid gray;
+}
+
+.video-logo-container {
+    position: relative;
+    width: 100%;
+    height: 40vh; /* 100% - 30% */
+    overflow: hidden;
+    z-index: 0;
+}
+
+/* Full-screen video inside the wrapper */
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+
+.mask-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-image: url("https://musictop-bucket.s3.ap-southeast-2.amazonaws.com/media/word1.png");
+    background-size: cover;
+    background-position: center;
+    transform: scale(200);
+    animation: shrinkToFull 4s ease forwards;
+}
+
+@keyframes shrinkToFull {
+    0% {
+        transform: scale(200);
+    }
+    100% {
+        transform: scale(1.4);
+    }
+}
+
+@media (max-width: 576px) {
+    .video-logo-container {
+        height: 25vh !important;
+    }
+
+    .create-chart-container {
+        font-size: 3vh !important;
+    }
+}
+
+
+.create-chart-container {
+    height: 150px;
+    border-radius: 0;
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0f0f0f;
+    font-size: 40px;
+    font-weight: 600;
+    color: #9acfea
+}

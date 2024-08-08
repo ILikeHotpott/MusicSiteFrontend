@@ -1,0 +1,16 @@
+.gallery-wrapper {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  position: relative;
+}
+
+.gallery {
+  display: flex;
+  width: fit-content;
+}
+
+.gallery img {
+  object-fit: cover;
+  margin-right: 10px;
+}

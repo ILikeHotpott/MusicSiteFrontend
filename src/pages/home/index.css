@@ -1,0 +1,98 @@
+body {
+    height: 200vh !important;
+}
+
+.circle-section {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 2s ease-in-out, visibility 2s ease-in-out;
+}
+.circle-section.flex {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.carousel {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    perspective: 1500px; /* Increase perspective for more dramatic 3D effect */
+}
+
+.carousel__track {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    animation: rotate 20s infinite linear;
+}
+
+.carousel__slide {
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    background-size: cover;
+    background-position: center;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+.carousel__slide:nth-child(1) {
+    transform: rotateY(0deg) translateZ(500px);
+    background-image: url('https://i.scdn.co/image/ab67616d0000b2738ecc33f195df6aa257c39eaa');
+}
+
+.carousel__slide:nth-child(2) {
+    transform: rotateY(36deg) translateZ(500px);
+    background-image: url('https://i.scdn.co/image/ab67616d0000b273e5a25ed08d1e7e0fbb440cef');
+}
+
+.carousel__slide:nth-child(3) {
+    transform: rotateY(72deg) translateZ(500px);
+    background-image: url('https://i.scdn.co/image/ab67616d0000b2739b9b36b0e22870b9f542d937');
+}
+
+.carousel__slide:nth-child(4) {
+    transform: rotateY(108deg) translateZ(500px);
+    background-image: url('https://i.scdn.co/image/ab67616d0000b273c5716278abba6a103ad13aa7');
+}
+
+.carousel__slide:nth-child(5) {
+    transform: rotateY(144deg) translateZ(500px);
+    background-image: url('https://i.scdn.co/image/ab67616d0000b273d441b2e9b63f0b9f9d90be19');
+}
+
+.carousel__slide:nth-child(6) {
+    transform: rotateY(180deg) translateZ(500px);
+    background-image: url('https://i.scdn.co/image/ab67616d0000b2737c68face1dc58127f3a7b1cc');
+}
+
+.carousel__slide:nth-child(7) {
+    transform: rotateY(216deg) translateZ(500px);
+    background-image: url('https://i.scdn.co/image/ab67616d0000b273b5d4b4ed17ec86c4b3944af2');
+}
+
+.carousel__slide:nth-child(8) {
+    transform: rotateY(252deg) translateZ(500px);
+    background-image: url('https://i.scdn.co/image/ab67616d0000b2734973a7d9304de53e18583220');
+}
+
+.carousel__slide:nth-child(9) {
+    transform: rotateY(288deg) translateZ(500px);
+    background-image: url('https://i.scdn.co/image/ab67616d0000b273c5649add07ed3720be9d5526');
+}
+
+.carousel__slide:nth-child(10) {
+    transform: rotateY(324deg) translateZ(500px);
+    background-image: url('https://i.scdn.co/image/ab67616d0000b273879e9318cb9f4e05ee552ac9');
+}

@@ -1,0 +1,3 @@
+.custom-modal {
+    z-index: 9999 !important; /* 强制提升层级 */
+}
