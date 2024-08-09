@@ -6,15 +6,21 @@ import DraggableBackground from "@/app/components/DraggableBackground";
 
 const profile = () => {
 
+    const bgColor = "bg-gray-300"
+
     return (
-        <div className="bg-black">
+        <div className="bg-gray-400">
             <MusicNav/>
-            <div>
-                <DraggableBackground avatarSrc={"https://musictop-bucket.s3.amazonaws.com/media/avatar/WechatIMG140.jpg"} />
+            <div className={``} style={{backgroundColor: 'transparent'}}>
+                <DraggableBackground
+                    avatarSrc={"https://musictop-bucket.s3.amazonaws.com/media/avatar/WechatIMG140.jpg"}
+                    bgColor={bgColor}/>
             </div>
 
             <div>
-                {/*<ScrollGallery direction="right" size={230} speed={0.8}/>*/}
+                <div className="h-1/4 mt-10">
+                    <ScrollGallery  direction="right" size={200} speed={0.8}/>
+                </div>
                 <div className="flex p-3 w-full justify-center mt-10">
                     <PlaylistList className="mr-20"/>
 

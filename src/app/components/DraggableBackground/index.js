@@ -2,7 +2,8 @@ import React, {useState, useRef, useEffect} from 'react';
 import {Button} from "@nextui-org/react";
 
 const DraggableBackground = ({bgSrc = "https://musictop-bucket.s3.ap-southeast-2.amazonaws.com/profile_bgp.jpeg",
-                                 avatarSrc = "https://musictop-bucket.s3.ap-southeast-2.amazonaws.com/media/profile/default.png"}) =>
+                                 avatarSrc = "https://musictop-bucket.s3.ap-southeast-2.amazonaws.com/media/profile/default.png",
+                             bgColor = "bg-green-950",}) =>
 {
     const [isDragging, setIsDragging] = useState(false);
     const [dragEnabled, setDragEnabled] = useState(false);
@@ -38,7 +39,7 @@ const DraggableBackground = ({bgSrc = "https://musictop-bucket.s3.ap-southeast-2
             setStartY(e.clientY);
             setInitialTop(imageWrapperRef.current.offsetTop);
             imageWrapperRef.current.style.cursor = 'grabbing';
-            e.preventDefault();  // Prevent default behavior to avoid any issues with dragging
+            e.preventDefault();
         }
     };
 
@@ -47,11 +48,14 @@ const DraggableBackground = ({bgSrc = "https://musictop-bucket.s3.ap-southeast-2
             const dy = e.clientY - startY;
             let newTop = initialTop + dy;
 
-            // Prevent dragging out of bounds
-            const containerHeight = containerRef.current.clientHeight;
+            // Calculate the drag bounds
             const imageHeight = imageWrapperRef.current.clientHeight;
-            newTop = Math.min(newTop, 0);
-            newTop = Math.max(newTop, containerHeight - imageHeight);  // Prevent dragging up beyond the bottom of the image
+            const maxTop = 0;
+            const minTop = -(imageHeight - (window.innerHeight * 0.55)); // Limit to imageHeight - 55vh
+
+            // Limit dragging to the range: minTop to maxTop
+            newTop = Math.max(newTop, minTop);
+            newTop = Math.min(newTop, maxTop);
 
             setImageTop(newTop);
         }
@@ -79,7 +83,7 @@ const DraggableBackground = ({bgSrc = "https://musictop-bucket.s3.ap-southeast-2
     return (
         <div ref={containerRef} className="relative bg-[#f0f0f0]">
             {/* 上半部分 */}
-            <div className="relative h-[60vh] overflow-hidden">
+            <div className="relative h-[55vh] overflow-hidden">
                 <button
                     className={`absolute top-2 right-2 py-2 px-4 bg-blue-600 text-white border-none cursor-pointer z-10 ${dragEnabled ? 'bg-blue-800' : ''}`}
                     onClick={handleDragToggle}
@@ -105,11 +109,11 @@ const DraggableBackground = ({bgSrc = "https://musictop-bucket.s3.ap-southeast-2
             </div>
 
             {/* 下半部分 */}
-            <div className="relative bg-white flex justify-center items-center h-1/4">
+            <div className={`relative flex justify-center items-center h-1/4 ${bgColor}`}>
                 <div className="flex w-4/5 justify-between items-center">
                     <div className="flex items-center ml-5">
                         <div
-                            className="w-48 h-48 rounded-full overflow-hidden border border-gray-300 relative -top-10 left-5 z-10 bg-white inline-flex">
+                            className="w-48 h-48 rounded-full overflow-hidden border border-gray-300 relative -top-10 left-5 z-10 inline-flex">
                             <img
                                 src={avatarSrc}
                                 alt="Nothing"
@@ -117,7 +121,7 @@ const DraggableBackground = ({bgSrc = "https://musictop-bucket.s3.ap-southeast-2
                                 className="w-full h-full object-cover"
                             />
                         </div>
-                        <span className="text-black text-4xl ml-10 h-12 mt-4">Last Whisper</span>
+                        <span className="text-black text-4xl ml-10 h-12 -mt-24">Last Whisper</span>
                     </div>
                     <div className="flex gap-2">
                         <Button color="primary" radius="full">Post</Button>
