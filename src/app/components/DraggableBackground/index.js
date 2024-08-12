@@ -1,5 +1,5 @@
 import React, {useState, useRef, useEffect} from 'react';
-import {Button} from "@nextui-org/react";
+import {Button, Image} from "@nextui-org/react";
 
 const DraggableBackground = ({bgSrc = "https://musictop-bucket.s3.ap-southeast-2.amazonaws.com/profile_bgp.jpeg",
                                  avatarSrc = "https://musictop-bucket.s3.ap-southeast-2.amazonaws.com/media/profile/default.png",
@@ -82,7 +82,6 @@ const DraggableBackground = ({bgSrc = "https://musictop-bucket.s3.ap-southeast-2
 
     return (
         <div ref={containerRef} className="relative bg-[#f0f0f0]">
-            {/* 上半部分 */}
             <div className="relative h-[55vh] overflow-hidden">
                 <button
                     className={`absolute top-2 right-2 py-2 px-4 bg-blue-600 text-white border-none cursor-pointer z-10 ${dragEnabled ? 'bg-blue-800' : ''}`}
@@ -100,15 +99,15 @@ const DraggableBackground = ({bgSrc = "https://musictop-bucket.s3.ap-southeast-2
                     className="relative cursor-grab top-0 left-1/2 transform -translate-x-1/2 w-[80vw] h-auto"
                     style={{cursor: dragEnabled ? 'grab' : 'default'}}
                 >
-                    <img
+                    <Image
                         src={bgSrc}
                         alt="Background Image"
+                        isBlurred
                         className="w-full h-auto object-cover max-w-none"
                     />
                 </div>
             </div>
 
-            {/* 下半部分 */}
             <div className={`relative flex justify-center items-center h-1/4 ${bgColor}`}>
                 <div className="flex w-4/5 justify-between items-center">
                     <div className="flex items-center ml-5">
@@ -125,7 +124,7 @@ const DraggableBackground = ({bgSrc = "https://musictop-bucket.s3.ap-southeast-2
                     </div>
                     <div className="flex gap-2">
                         <Button color="primary" radius="full">Post</Button>
-                        <Button color="default" radius="full">Edit</Button>
+                        <Button color="default" className="bg-gray-400" radius="full">Edit</Button>
                     </div>
                 </div>
             </div>

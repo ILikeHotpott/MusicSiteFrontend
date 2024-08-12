@@ -11,8 +11,6 @@ const userSlice = createSlice({
         email: '',
         password: '',
         userInfo: {},
-        rememberMe: false,
-        isVisible: false,
         status: 'idle',
         error: null,
     },
@@ -22,9 +20,6 @@ const userSlice = createSlice({
         },
         setPassword: (state, action) => {
             state.password = action.payload;
-        },
-        setRememberMe: (state, action) => {
-            state.rememberMe = action.payload;
         },
         setUserInfo: (state, action) => {
             state.userInfo = action.payload;

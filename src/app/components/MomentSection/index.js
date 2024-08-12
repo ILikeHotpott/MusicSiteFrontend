@@ -74,7 +74,7 @@ const MomentSection = () => {
         <div>
             <main className="h-full w-full">
                 <div className="two-column-layout">
-                    <div className="left-column items-center justify-center ml-5">
+                    <div className="items-center justify-center ml-5">
                         <div className="ml-5 mb-5">
                             <Button
                                 radius="full"

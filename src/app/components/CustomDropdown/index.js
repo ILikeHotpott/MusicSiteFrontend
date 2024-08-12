@@ -19,6 +19,9 @@ export default function CustomDropdown() {
                         <p className="font-semibold text-black">Signed in as</p>
                         <p className="font-semibold text-black">zoey@example.com</p>
                     </DropdownItem>
+                    <DropdownItem key="profile" className="text-black" href="/profile">
+                        Profile
+                    </DropdownItem>
                     <DropdownItem key="settings" className="text-black">
                         Settings
                     </DropdownItem>

@@ -12,7 +12,6 @@ const MusicNav = ({ isAuthenticated, username }) => {
     }, [dispatch]);
 
     const user = useSelector(state => state.user.userInfo.id);
-    console.log(user);
 
     return (
         <div className="navbar-container">
